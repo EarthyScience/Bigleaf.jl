@@ -29,6 +29,8 @@ const GROUP = get(ENV, "GROUP", "All") # defined in in CI.yml
         @time @safetestset "surface_conductance Tests" include("surface_conductance_test.jl")
         #@safetestset "Tests" include("test/evapotranspiration_test.jl")
         @time @safetestset "evapotranspiration Tests" include("evapotranspiration_test.jl")
+        #@safetestset "Tests" include("test/undoc_test.jl")
+        @time @safetestset "undocumented objects" include("undoc_test.jl")
     end
 end
 
