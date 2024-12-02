@@ -1,8 +1,8 @@
 # Bigleaf
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://bgctw.github.io/Bigleaf.jl/stable)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://bgctw.github.io/Bigleaf.jl/dev)
-[![Build Status](https://github.com/bgctw/Bigleaf.jl/workflows/CI/badge.svg)](https://github.com/bgctw/Bigleaf.jl/actions)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://earthyscience.github.io/Bigleaf.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://earthyscience.github.io/Bigleaf.jl/dev/)
+[![Build Status](https://github.com/EarthyScience/Bigleaf.jl/workflows/CI/badge.svg)](https://github.com/EarthyScience/Bigleaf.jl/actions)
 [![Coverage](https://codecov.io/gh/bgctw/Bigleaf.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/bgctw/Bigleaf.jl)
 
 
@@ -29,20 +29,20 @@ using Pkg
 Pkg.add("Bigleaf")
 ```
 
-And then importet to the every Julia session by:
+And then imported to every Julia session by:
 ```julia
 using Bigleaf
 ```
 
 ## Usage
-See the [Documentation](https://bgctw.github.io/Bigleaf.jl/dev/) 
-that includes a [walkthrough](https://bgctw.github.io/Bigleaf.jl/dev/walkthrough/).
+See the [Documentation](https://earthyscience.github.io/Bigleaf.jl/dev/) 
+that includes a [walkthrough](https://earthyscience.github.io/Bigleaf.jl/dev/walkthrough/).
 
-[Please report bugs or issues here](https://github.com/bgctw/Bigleaf.jl/issues)
+[Please report bugs or issues here](https://github.com/EarthyScience/Bigleaf.jl/issues)
 
 ## Package content 
 We are porting functionality of the [R package](https://bitbucket.org/juergenknauer/Bigleaf) as needed. Please
-file an [issue](https://github.com/bgctw/Bigleaf.jl/issues) if you need a specific feature.
+file an [issue](https://github.com/EarthyScience/Bigleaf.jl/issues) if you need a specific feature.
 
 At the current state we ported
 - Meteorological variables
