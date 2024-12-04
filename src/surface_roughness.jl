@@ -188,7 +188,7 @@ function roughness_parameters(method::Roughness_wind_profile,
   #   zr, d, Tair, pressure, ustar, H; stab_formulation, constants)).psi_m
   psi_m = getindex.(stability_correction.(
     zr, d, Tair, pressure, ustar, H; stab_formulation, constants), :psi_m)
-  # https://discourse.julialang.org/t/eltype-changed-during-broadcast-with-missing/71312?u=bgctw
+  # https://discourse.julialang.org/t/eltype-changed-during-broadcast-with-missing/71312?u=earthyscience
   res_eltype = Union{eltype(ustar),eltype(wind),eltype(Tair),eltype(pressure),eltype(H)}
   psi_m = convert(Vector{res_eltype}, psi_m)::Vector{res_eltype}    
   rp = roughness_parameters(method, ustar, wind, psi_m; zh, zr, d, constants, kwargs...)

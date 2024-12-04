@@ -41,7 +41,7 @@ from the `bigleaf`
 [R package](https://bitbucket.org/juergenknauer/Bigleaf/) repository and contains 
 half-hourly data of meteorological and flux measurements made in June 2014. For loading the 
 RData into Julia, see the 
-[source](https://github.com/bgctw/Bigleaf.jl/blob/main/docs/src/walkthrough.md?plain=1#L26) 
+[source](https://github.com/earthyscience/Bigleaf.jl/blob/main/docs/src/walkthrough.md?plain=1#L26) 
 of this file. We give the data.frame a shorter name here and create a timestamp.
 
 ```@example doc
