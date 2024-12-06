@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
   pull-requests: write
 jobs:
   CompatHelper:
@@ -43,8 +44,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMPATHELPER_PRIV: ${{ secrets.DOCUMENTER_KEY }}
           # COMPATHELPER_PRIV: ${{ secrets.COMPATHELPER_PRIV }}
+      # - uses: actions/checkout@v4
+      #   with:
+      #     ref: 'keepalive'      # The branch, tag or SHA to checkout. 
+      # - uses: gautamkrishnar/keepalive-workflow@@v2
+  keepalive-job:
+    name: Keepalive Workflow
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
       - uses: actions/checkout@v4
         with:
-          ref: 'keepalive'      # The branch, tag or SHA to checkout. 
-      - uses: earthyscience/keepalive-workflow@master
-            
+          ref: 'keepalive'      # The branch, tag or SHA to checkout.       
+      - uses: gautamkrishnar/keepalive-workflow@v2
