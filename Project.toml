@@ -1,7 +1,7 @@
 name = "Bigleaf"
 uuid = "e2ae9153-b66f-47c5-85f1-c6d65380123f"
 authors = ["Thomas Wutzler <twutz@bgc-jena.mpg.de> and contributors"]
-version = "0.3.1-DEV"
+version = "0.3.2-DEV"
 
 [deps]
 AstroLib = "c7932e45-9af1-51e7-9da9-f004cd3a462b"
