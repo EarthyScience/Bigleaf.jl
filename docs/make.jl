@@ -12,13 +12,13 @@ doctest(Bigleaf, manual = false)
 makedocs(;
     # modules=[Bigleaf], # uncomment to show warnings on non-included docstrings
     authors="Thomas Wutzler <twutz@bgc-jena.mpg.de>, Jürgen Knauer <Juergen.Knauer@csiro.au> and contributors",
-    #repo="https://github.com/earthyscience/Bigleaf.jl/blob/{commit}{path}#{line}",
-    repo = Remotes.GitHub("earthyscience", "Bigleaf.jl"),
+    #repo="https://github.com/EarthyScience/Bigleaf.jl/blob/{commit}{path}#{line}",
+    repo = Remotes.GitHub("EarthyScience", "Bigleaf.jl"),
     sitename="Bigleaf.jl",
     doctestfilters=[r".*Info.*"],
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://earthyscience.github.io/Bigleaf.jl",
+        canonical="https://EarthyScience.github.io/Bigleaf.jl",
         assets=String[],
     ),
     pages=[
@@ -43,6 +43,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/earthyscience/Bigleaf.jl",
+    repo="github.com/EarthyScience/Bigleaf.jl",
     devbranch="main",
 )
