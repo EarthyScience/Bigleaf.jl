@@ -33,11 +33,11 @@ additional for InversePenmanMonteith
 For `InversePenmanMonteith()`, surface conductance (Gs) in m s-1 
 is calculated from the inverted Penman-Monteith equation:
 
-``G_s = ( LE \\. G_a \\, \\gamma ) / ( \\Delta \\, A + \\rho \\, c_p \\, G_a \\, VPD - 
+``G_s = ( LE \\, G_a \\, \\gamma ) / ( \\Delta \\, A + \\rho \\, c_p \\, G_a \\, VPD - 
 LE \\, (\\Delta + \\gamma ))``
 
 Where ``\\gamma`` is the psychrometric constant (kPa K-1), ``\\Delta`` is the slope of the 
-saturation vapor pressure curve (kPa K^-1), and ``\\rho`` is air density (kg m-3).
+saturation vapor pressure curve (kPa K-1), and ``\\rho`` is air density (kg m-3).
 Available energy (A) is defined as ``A = R_n - G - S``. 
 
 Ground heat flux and total storage flux can be provided as scalars or vectors of

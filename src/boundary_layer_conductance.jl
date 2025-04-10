@@ -208,7 +208,11 @@ Boundary Layer Conductance using constant kB^(-1) value for heat transfer.
 - `constants=`[`BigleafConstants`](@ref)`()`
  
 # Details
-Rb_h computed by ``kB_h/(k * ustar)``, where k is the von Karman constant.
+Rb_h computed by :
+
+``kB_h/(k * ustar)``
+
+where k is the von Karman constant.
 """
 function Gb_constant_kB1(ustar, kB_h; constants=BigleafConstants())
   ismissing(ustar) && return(missing)
@@ -325,7 +329,7 @@ and ``R_{eh}`` is the Reynolds number for leaves:
 
 ``R_{eh} = D_l \\, wind(z_h) / v``
  
-k_{Bs-1}, the k_{B-1} value for bare soil surface, is calculated according 
+``k_{Bs-1}``, the ``k_{B-1}`` value for bare soil surface, is calculated according 
 to Su et al. 2001:
 
 ``k_{Bs-1} = 2.46(Re)^{0.25} - ln(7.4)``
