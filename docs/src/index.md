@@ -33,11 +33,15 @@ Pages = ["boundary_layer_conductance.md",]
 Pages = ["aerodynamic_conductance.md",]
 ```
 
+## Surface Conductance
+```@index
+Pages = ["surface_conductance.md",]
+```
+
 ## Evapotranspiration
 ```@index
 Pages = ["evapotranspiration.md",]
 ```
-
 
 ## Global radiation
 ```@index

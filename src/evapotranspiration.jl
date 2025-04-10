@@ -262,7 +262,7 @@ where ``\\Omega`` is the decoupling coefficient as calculated from
 the ET rate that would occur under uncoupled conditions, where the budget
 is dominated by radiation (when Ga -> 0):
 
-``ET_{eq} = (\\Delta \\, (R_n - G - S) \\, \\lambda) / ( \\Delta \\gamma)``
+``ET_{eq} = (\\Delta \\, (R_n - G - S)) / (\\lambda \\, (\\Delta + \\gamma))``
 
 where ``\\Delta`` is the slope of the saturation vapor pressur(kPa K-1),
 ``\\lambda`` is the latent heat of vaporization (J kg-1), and ``\\gamma``
@@ -270,7 +270,7 @@ is the psychrometric constant (kPa K-1).
 `ET_imp` is the imposed evapotranspiration rate, the ET rate
 that would occur under fully coupled conditions (when Ga -> inf):
 
-``ET_{imp} = (\\rho \\, c_p \\, \\mathit{VPD} ~ G_s \\, \\lambda) / \\gamma``
+``ET_{imp} = (\\rho \\, c_p \\, \\mathit{VPD} ~ G_s) / (\\lambda \\, \\gamma)``
 
 where ``\\rho`` is the air density (kg m-3).
  
