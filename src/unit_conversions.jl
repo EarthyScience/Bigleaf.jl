@@ -127,7 +127,7 @@ The conversions are given by
 - ``G_{mol} = G_{ms}  \\, pressure / (Rgas  Tair)``
 - ``G_{ms} = G_{mol}  \\, (Rgas  Tair) / pressure``
 
-where Tair is in Kelvin and pressure in Pa (converted from kPa internally).
+where Tair is in deg C and pressure in Pa (converted from kPa internally).
 
 # References 
 Jones, H_G_ 1992_ Plants and microclimate: a quantitative approach to 
