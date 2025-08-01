@@ -61,16 +61,16 @@ function Esat_slope(Tair::Number; Esat_formula=Sonntag1990(), constants=BigleafC
   Esat, Delta
 end,
 function Esat_from_Tair(Tair::FT; Esat_formula=Sonntag1990(), constants=BigleafConstants()) where FT
-  a,b,c = map(FT, get_EsatCoef(Esat_formula))
+  a,b,c = map(x -> convert(FT,x), get_EsatCoef(Esat_formula))
   Esat = a * exp((b * Tair) / (c + Tair)) * FT(constants.Pa2kPa)
 end,
 function Esat_from_Tair_deriv(Tair::FT; Esat_formula=Sonntag1990(), constants=BigleafConstants()) where FT
   # slope of the saturation vapor pressure curve
   #Delta = eval(D(expression(a * exp((b * Tair) / (c + Tair))),name="Tair"))
-  a,b,c = map(FT, get_EsatCoef(Esat_formula))
+  a,b,c = map(x -> convert(FT,x), get_EsatCoef(Esat_formula))
   #Delta_Pa = @. a*(b / (Tair + c) + (-Tair*b) / ((Tair + c)^2))*exp((Tair*b) / (Tair + c))
   Delta_Pa = a * (exp((b * Tair)/(c + Tair)) * (b/(c + Tair) - (b * Tair)/(c + Tair)^2))
-  Delta = Delta_Pa .* FT(constants.Pa2kPa)
+  Delta = Delta_Pa .* convert(FT, constants.Pa2kPa)
 end
     
 get_EsatCoef(::Sonntag1990) = (a=611.2,b=17.62,c=243.12)
