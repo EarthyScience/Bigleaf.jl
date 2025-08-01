@@ -69,7 +69,7 @@ function Esat_from_Tair_deriv(Tair; Esat_formula=Sonntag1990(), constants=Biglea
   #Delta = eval(D(expression(a * exp((b * Tair) / (c + Tair))),name="Tair"))
   a,b,c = get_EsatCoef(Esat_formula)
   #Delta_Pa = @. a*(b / (Tair + c) + (-Tair*b) / ((Tair + c)^2))*exp((Tair*b) / (Tair + c))
-  Delta_Pa = @. a * (exp((b * Tair)/(c + Tair)) * (b/(c + Tair) - (b * Tair)/(c + Tair)^2))
+  Delta_Pa = a * (exp((b * Tair)/(c + Tair)) * (b/(c + Tair) - (b * Tair)/(c + Tair)^2))
   Delta = Delta_Pa .* constants.Pa2kPa
 end
     
