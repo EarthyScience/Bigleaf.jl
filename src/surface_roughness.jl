@@ -146,25 +146,26 @@ rp = roughness_parameters(Roughness_wind_profile(),df;zh,zr=40,d=0.8*zh)
 ≈(rp.z0m, 0.55, rtol=0.1)
 # output
 true
-``` 
-"""                                 
-function roughness_parameters(::RoughnessCanopyHeight, zh; frac_d=0.7, frac_z0m=0.1)
+```
+"""
+function roughness_parameters(::RoughnessCanopyHeight, zh::FT;
+    frac_d=convert(FT,0.7), frac_z0m=convert(FT,0.1)) where FT
   d      = frac_d*zh
   z0m    = frac_z0m*zh
   z0m_se = missing
   (;d, z0m, z0m_se)
 end
 
-function roughness_parameters(::RoughnessCanopyHeightLAI, zh, LAI; 
-  cd=0.2, hs=0.01)
+function roughness_parameters(::RoughnessCanopyHeightLAI, zh::FT, LAI;
+  cd=convert(FT,0.2), hs=convert(FT,0.01)) where FT
   X = cd * LAI
-  d = 1.1 * zh * log(1 + X^(1/4))
-  z0m = ifelse(0 <= X <= 0.2, hs + 0.3 * X^(1/2), 0.3 * zh * (1 - d/zh))
+  d = convert(FT,1.1) * zh * log(1 + X^convert(FT,1/4))
+  z0m = ifelse(0 <= X <= convert(FT,0.2), hs + convert(FT,0.3) * X^(1/2), convert(FT,0.3) * zh * (1 - d/zh))
   z0m_se = missing
   (;d, z0m, z0m_se)
 end
 
-function roughness_parameters(::Roughness_wind_profile, ustar::AbstractVector{FT}, wind, psi_m; 
+function roughness_parameters(::Roughness_wind_profile, ustar::AbstractVector{FT}, wind, psi_m;
   zh, zr, d = 0.7*zh, constants=BigleafConstants()
   ) where FT
   FT == Missing && return((d = d, z0m = missing, z0m_se = missing))

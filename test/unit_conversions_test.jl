@@ -1,7 +1,7 @@
 using Bigleaf, Test
 
 @testset "Esat_from_Tair" begin
-  Tair = 15
+  Tair = 15.0
   Esat_formula=Sonntag1990()
   constants=BigleafConstants()
   eSat = Esat_from_Tair(Tair; Esat_formula, constants)
@@ -25,7 +25,7 @@ end
     constants=BigleafConstants()
     Esat = Esat_from_Tair.(Tair)
     delta = Esat_from_Tair_deriv.(Tair)
-    delta2 = diff(Esat)/step 
+    delta2 = diff(Esat)/step
     @test all(isapprox.(delta[2:end] - delta2, 0, atol=1e-3))
     Esat3, delta3 = Esat_slope(Tair[1])
     @test Esat3 ≈ Esat[1]

@@ -60,17 +60,17 @@ function Esat_slope(Tair::Number; Esat_formula=Sonntag1990(), constants=BigleafC
   Delta = Esat_from_Tair_deriv(Tair; Esat_formula, constants)
   Esat, Delta
 end,
-function Esat_from_Tair(Tair; Esat_formula=Sonntag1990(), constants=BigleafConstants()) 
-  a,b,c = get_EsatCoef(Esat_formula)
-  Esat = a * exp((b * Tair) / (c + Tair)) * constants.Pa2kPa
+function Esat_from_Tair(Tair::FT; Esat_formula=Sonntag1990(), constants=BigleafConstants()) where FT
+  a,b,c = map(x -> convert(FT,x), get_EsatCoef(Esat_formula))
+  Esat = a * exp((b * Tair) / (c + Tair)) * FT(constants.Pa2kPa)
 end,
-function Esat_from_Tair_deriv(Tair; Esat_formula=Sonntag1990(), constants=BigleafConstants()) 
+function Esat_from_Tair_deriv(Tair::FT; Esat_formula=Sonntag1990(), constants=BigleafConstants()) where FT
   # slope of the saturation vapor pressure curve
   #Delta = eval(D(expression(a * exp((b * Tair) / (c + Tair))),name="Tair"))
-  a,b,c = get_EsatCoef(Esat_formula)
+  a,b,c = map(x -> convert(FT,x), get_EsatCoef(Esat_formula))
   #Delta_Pa = @. a*(b / (Tair + c) + (-Tair*b) / ((Tair + c)^2))*exp((Tair*b) / (Tair + c))
   Delta_Pa = a * (exp((b * Tair)/(c + Tair)) * (b/(c + Tair) - (b * Tair)/(c + Tair)^2))
-  Delta = Delta_Pa .* constants.Pa2kPa
+  Delta = Delta_Pa .* convert(FT, constants.Pa2kPa)
 end
     
 get_EsatCoef(::Sonntag1990) = (a=611.2,b=17.62,c=243.12)
@@ -145,12 +145,12 @@ true
 """
 function ms_to_mol(G_ms,Tair,pressure; constants=BigleafConstants())
   Tair     = Tair + oftype(Tair,constants.Kelvin)
-  pressure = pressure * constants.kPa2Pa 
+  pressure = pressure * oftype(Tair, constants.kPa2Pa)
   G_mol  = G_ms * pressure / (oftype(Tair, constants.Rgas)  * Tair)
 end,
 function mol_to_ms(G_mol,Tair,pressure; constants=BigleafConstants())
   Tair     = Tair + oftype(Tair,constants.Kelvin)
-  pressure = pressure * constants.kPa2Pa 
+  pressure = pressure * oftype(Tair, constants.kPa2Pa)
   G_ms  = G_mol * (oftype(Tair, constants.Rgas) * Tair) / (pressure)
 end
 
