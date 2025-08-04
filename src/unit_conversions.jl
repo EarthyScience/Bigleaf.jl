@@ -70,7 +70,7 @@ function Esat_from_Tair_deriv(Tair::FT; Esat_formula=Sonntag1990(), constants=Bi
   a,b,c = map(x -> convert(FT,x), get_EsatCoef(Esat_formula))
   #Delta_Pa = @. a*(b / (Tair + c) + (-Tair*b) / ((Tair + c)^2))*exp((Tair*b) / (Tair + c))
   Delta_Pa = a * (exp((b * Tair)/(c + Tair)) * (b/(c + Tair) - (b * Tair)/(c + Tair)^2))
-  Delta = Delta_Pa .* convert(FT, constants.Pa2kPa)
+  Delta = Delta_Pa .* FT(constants.Pa2kPa)
 end
     
 get_EsatCoef(::Sonntag1990) = (a=611.2,b=17.62,c=243.12)

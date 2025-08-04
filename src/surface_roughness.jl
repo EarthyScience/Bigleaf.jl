@@ -149,7 +149,7 @@ true
 ```
 """
 function roughness_parameters(::RoughnessCanopyHeight, zh::FT;
-    frac_d=convert(FT,0.7), frac_z0m=convert(FT,0.1)) where FT
+    frac_d=FT(0.7), frac_z0m=FT(0.1)) where FT
   d      = frac_d*zh
   z0m    = frac_z0m*zh
   z0m_se = missing
@@ -157,10 +157,10 @@ function roughness_parameters(::RoughnessCanopyHeight, zh::FT;
 end
 
 function roughness_parameters(::RoughnessCanopyHeightLAI, zh::FT, LAI;
-  cd=convert(FT,0.2), hs=convert(FT,0.01)) where FT
+  cd=FT(0.2), hs=FT(0.01)) where FT
   X = cd * LAI
-  d = convert(FT,1.1) * zh * log(1 + X^convert(FT,1/4))
-  z0m = ifelse(0 <= X <= convert(FT,0.2), hs + convert(FT,0.3) * X^(1/2), convert(FT,0.3) * zh * (1 - d/zh))
+  d = FT(1.1) * zh * log(1 + X^FT(1/4))
+  z0m = ifelse(0 <= X <= FT(0.2), hs + FT(0.3) * X^(1/2), FT(0.3) * zh * (1 - d/zh))
   z0m_se = missing
   (;d, z0m, z0m_se)
 end
