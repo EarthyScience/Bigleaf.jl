@@ -13,4 +13,5 @@ StatsPlots = "f3b207a7-027a-5e70-b257-86293d7955fd"
 Suppressor = "fd094767-a336-5f1f-9728-57cf17d0bbfb"
 
 [compat]
+CodecXz = "0.7.4"
 Documenter = "1.16.1"
