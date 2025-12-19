@@ -143,7 +143,7 @@ thas = subset(thaf, :valid)
 
 
 
-When looking at the function output we see that we these settings, we exclude in total 1013 data points (70.35% of the data). In total, 29.65% of all data remained. The output of the `filter_data` function is another DataFrame (thaf), in which all filtered timesteps are set to missing. (Note that this is the default case. If we add `filtered_data_to_NA=true`, the data are left untouched, but an additional column "valid" is added to the DataFrame that specifies whether the time points fulfull the criteria or not). In the following examples we will work mostly with the filtered DataFrame `thaf`.
+When looking at the function output we see that we these settings, we exclude in total 1013 data points (70.35% of the data). In total, 29.65% of all data remained. The output of the `filter_data` function is another DataFrame (thaf), in which all filtered timesteps are set to missing. (Note that this is the default case. If we add `filtered_data_to_NA=true`, the data are left untouched, but an additional column "valid" is added to the DataFrame that specifies whether the time points fulfill the criteria or not). In the following examples we will work mostly with the filtered DataFrame `thaf`.
 
 
 

@@ -71,4 +71,4 @@ jobs:
             using Documenter: DocMeta, doctest
             using Bigleaf
             DocMeta.setdocmeta!(Bigleaf, :DocTestSetup, :(using Bigleaf); recursive=true)
-            doctest(Bigleaf)'
+            doctest(Bigleaf)
