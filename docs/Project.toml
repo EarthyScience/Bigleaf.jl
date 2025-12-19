@@ -15,3 +15,4 @@ Suppressor = "fd094767-a336-5f1f-9728-57cf17d0bbfb"
 [compat]
 CodecXz = "0.7.4"
 Documenter = "1.16.1"
+Plots = "1.41.3"
