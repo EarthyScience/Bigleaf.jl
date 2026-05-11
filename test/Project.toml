@@ -16,3 +16,4 @@ TimeZones = "f269a46b-ccf7-5d73-abea-4c690281aa53"
 
 [compat]
 Pipe = "1.3.0"
+TimeZones = "1.22.2"
