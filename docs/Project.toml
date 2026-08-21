@@ -14,7 +14,7 @@ Suppressor = "fd094767-a336-5f1f-9728-57cf17d0bbfb"
 
 [compat]
 CodecXz = "0.7.4"
-DataDeps = "0.7.14"
+DataDeps = "0.7.14, 1.0"
 DataFrames = "1.8.1"
 Documenter = "1.16.1"
 Latexify = "0.16.10"
