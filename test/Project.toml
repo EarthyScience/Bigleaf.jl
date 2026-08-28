@@ -17,6 +17,7 @@ TimeZones = "f269a46b-ccf7-5d73-abea-4c690281aa53"
 [compat]
 Missings = "1.2.0"
 Pipe = "1.3.0"
+StatsBase = "0.34.13"
 Tables = "1.12.1"
 StableRNGs = "1.0.4"
 SafeTestsets = "0.1.0"
