@@ -102,7 +102,7 @@ precession does not differ too much from year where the function
 is called. Fractional hours can be provided.
 
 # Examples
-```jldoctest output = false
+```jldoctest; output = false
 get_datetime_for_doy_hour(2; year = 2021)
 # output
 2021-01-02T12:00:00
