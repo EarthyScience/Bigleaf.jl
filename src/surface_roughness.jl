@@ -160,7 +160,7 @@ function roughness_parameters(::RoughnessCanopyHeightLAI, zh::FT, LAI;
   cd=FT(0.2), hs=FT(0.01)) where FT
   X = cd * LAI
   d = FT(1.1) * zh * log(1 + X^FT(1/4))
-  z0m = ifelse(0 <= X <= FT(0.2), hs + FT(0.3) * X^(1/2), FT(0.3) * zh * (1 - d/zh))
+  z0m = ifelse(0 <= X <= FT(0.2), hs + FT(0.3) * zh * X^(1/2), FT(0.3) * zh * (1 - d/zh))
   z0m_se = missing
   (;d, z0m, z0m_se)
 end
